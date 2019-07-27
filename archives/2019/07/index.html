@@ -93,14 +93,26 @@
     }
   };
 </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <meta name="description" content="F老师最最最最爱NC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eason的主页">
 <meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Eason的主页">
+<meta property="og:description" content="F老师最最最最爱NC">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Eason的主页">
+<meta name="twitter:description" content="F老师最最最最爱NC">
 
 
 
@@ -119,7 +131,7 @@
 </script>
 
   
-  <title>归档 | Hexo</title>
+  <title>归档 | Eason的主页</title>
   
 
 
@@ -178,7 +190,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Eason的主页</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -221,7 +233,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-about">
 
     
     
@@ -230,7 +242,55 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
 
   </li>
 
@@ -266,6 +326,15 @@
       
       
     
+      
+      
+    
+      
+      
+    
+      
+      
+    
     
 
   
@@ -289,7 +358,7 @@
         
           
         
-        嗯..! 目前共计 2 篇日志。 继续努力。
+        嗯..! 目前共计 3 篇日志。 继续努力。
       </span>
       
 
@@ -314,9 +383,44 @@
 
       <h2 class="post-title">
         
+          <a class="post-title-link" href="/2019/07/27/FPGA-Driver-Register/" itemprop="url">
+            
+              <span itemprop="name">FPGA Driver Register</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-07-27T11:49:39+08:00" content="2019-07-27">
+          07-27
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
           <a class="post-title-link" href="/2019/07/26/超声探头技术说明阅读笔记/" itemprop="url">
             
-              <span itemprop="name">未命名</span>
+              <span itemprop="name">超声探头技术说明阅读笔记</span>
             
           </a>
         
@@ -407,8 +511,8 @@
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description motion-element" itemprop="description"></div>
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description motion-element" itemprop="description">F老师最最最最爱NC</div>
 </div>
 
 
@@ -416,16 +520,50 @@
     
       <div class="site-state-item site-state-posts">
         
-          <a href="/archives/">
+          <a href="/archives">
         
-          <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">文章</span>
         </a>
       </div>
     
 
     
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
 
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
     
   </nav>
 
@@ -434,6 +572,21 @@
 
 
 
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:supereaosn@sjtu.edu.cn" title="E-Mail &rarr; mailto:supereaosn@sjtu.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
 
 
 
@@ -465,7 +618,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder"></span>
 
   
 
@@ -589,6 +742,12 @@
 
 
   
+  
+
+  
+  
+
+  
 
 
 
@@ -611,6 +770,33 @@
 
 
 
+
+
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '520px'
+        });
+      });
+    },
+  });
+}
+</script>
 
 
 
