@@ -16,7 +16,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -174,7 +174,7 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -185,7 +185,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -429,7 +429,6 @@
         <a id="more"></a>`
 
 <div class="pdf" target="AD9106_cn.pdf" height></div> 
-
 <h3 id="SPI端口"><a href="#SPI端口" class="headerlink" title="SPI端口"></a>SPI端口</h3><p>当CS变为有效时，SPI地址和数据传输即开始。SPI主器件通过SDIO提供的第一位是读写指示位(高电平表示读操作，低电平表示写操作)。后续15位就是初始寄存器地址，允许写入或读取一组连续地址。</p>
 <p><img src="/2019/07/27/FPGA-Driver-Register/1564199996368.png" alt="1564199996368"></p>
 <p><img src="/2019/07/27/FPGA-Driver-Register/1564200009080.png" alt="1564200009080"></p>
@@ -441,7 +440,8 @@
 <h3 id="DAC模拟增益寄存器-DAC4AGAIN，地址0x04-0x07"><a href="#DAC模拟增益寄存器-DAC4AGAIN，地址0x04-0x07" class="headerlink" title="DAC模拟增益寄存器(DAC4AGAIN，地址0x04-0x07)"></a>DAC模拟增益寄存器(DAC4AGAIN，地址0x04-0x07)</h3><p><strong>在本次实验中，应配置为0000000001111111<font color="red">（不确定）</font></strong></p>
 <h3 id="DAC模拟增益范围寄存器-DACxRANGE，地址0x08"><a href="#DAC模拟增益范围寄存器-DACxRANGE，地址0x08" class="headerlink" title="DAC模拟增益范围寄存器(DACxRANGE，地址0x08)"></a>DAC模拟增益范围寄存器(DACxRANGE，地址0x08)</h3><p><strong>在本次实验中，应配置为0x0F<font color="red">（不确定）</font></strong></p>
 <p>$f_{out}=F_{CLKP/CLKN}*DDS_TW/2^{24}$</p>
-<p><font color="red">$F_{CLKP/CLKN}=16MHz$</font></p>
+<font color="red">$F_{CLKP/CLKN}=16MHz$</font>
+
 <p>DDS_TW = 0x100000</p>
 <h3 id="DDS调谐字MSB寄存器-DDS-TW32，地址0x3E"><a href="#DDS调谐字MSB寄存器-DDS-TW32，地址0x3E" class="headerlink" title="DDS调谐字MSB寄存器(DDS_TW32，地址0x3E)"></a>DDS调谐字MSB寄存器(DDS_TW32，地址0x3E)</h3><p><strong>在本次实验中，应配置为0x1000</strong></p>
 <h3 id="DDS调谐字LSB寄存器-DDS-TW1，地址0x3F"><a href="#DDS调谐字LSB寄存器-DDS-TW1，地址0x3F" class="headerlink" title="DDS调谐字LSB寄存器(DDS_TW1，地址0x3F)"></a>DDS调谐字LSB寄存器(DDS_TW1，地址0x3F)</h3><p><strong>在本次实验中，应配置为0x0000</strong></p>
@@ -571,7 +571,7 @@
         
           <a href="/archives">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -590,7 +590,9 @@
         
           
         
-        <span class="site-state-item-count">1</span>
+          
+        
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -888,7 +890,7 @@ window.addEventListener("message", function(e) {
     $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
   }
 }, false);
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
