@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="Eason的主页">
 <meta property="og:description" content="用这篇文章记录下有关超声波的一些基础知识，以及医用超声波（人体内）的一些常用数据，以供日后查阅使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-30T11:58:15.645Z">
+<meta property="og:updated_time" content="2019-08-06T07:20:15.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="医用超声波的知识整理">
 <meta name="twitter:description" content="用这篇文章记录下有关超声波的一些基础知识，以及医用超声波（人体内）的一些常用数据，以供日后查阅使用">
@@ -380,7 +380,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-30 19:58:15" itemprop="dateModified" datetime="2019-07-30T19:58:15+08:00">2019-07-30</time>
+                <time title="修改时间：2019-08-06 15:20:15" itemprop="dateModified" datetime="2019-08-06T15:20:15+08:00">2019-08-06</time>
               </span>
             
           
@@ -511,15 +511,15 @@
 <p>在人体中，取声速为$1500m/s$，则频率为$1MHz$的超声波，波长约为$mm$。极限分辨率为$0.5mm$</p>
 <h3 id="声压与声强"><a href="#声压与声强" class="headerlink" title="声压与声强"></a>声压与声强</h3><p>纵波在弹性媒质内传播过程中 , 媒质质点的压强是随时间变化的 , 媒质质点的密度时疏时密 , 从而使平衡区的压力时强时弱 , 结果导致有波动时压强 ($P_W$ ) 与无波动时压强 ($P_O$) 之间有一定额压强差 ($P_W － P_O$), 这一波动压强称为声压。对于一无吸收媒质的平面波 , 有波动时压强的最大值与没有波动作用时各点压强的差值称为压强振幅 ($P_m$)</p>
 <script type="math/tex; mode=display">{P_m}^2=I*\rho*c</script><p>其中，$I$是声强，表示声音的功率传输密度，单位$J/(s*m^2)$，$\rho$是介质的密度，$c$是声速</p>
-<h3 id="声阻抗率"><a href="#声阻抗率" class="headerlink" title="声阻抗率"></a>声阻抗率</h3><p>声阻抗率即单位面积上的声阻抗。它表示声波在介质中波阵面上的声压与该面上质点的振动速度之比。</p>
-<p>声阻抗的计算公式为：$Z=\rho<em>c$，单位是$N</em>s/m^3$</p>
+<h3 id="声阻抗率"><a href="#声阻抗率" class="headerlink" title="声阻抗率"></a>声阻抗率</h3><p><strong>声波阻抗</strong>又称为<strong>声阻抗</strong>或<strong>音阻</strong>。<a href="https://zh.wikipedia.org/wiki/声波" target="_blank" rel="noopener">声波</a>传导实为“介质偏离平衡态的小扰动”的传播，<strong>声波阻抗</strong>即为将介质位移所需克服的阻力。定义为“<a href="https://zh.wikipedia.org/wiki/声压" target="_blank" rel="noopener">声压</a> / 介质流过一面积的速度”，亦可表示为“介质密度与声速的乘积”它表示声波在介质中波阵面上的声压与该面上质点的振动速度之比。</p>
+<p>声阻抗率的计算公式为：$Z=\rho<em>c$，单位是$N</em>s/m^3$</p>
 <h5 id="几种物质及人体组织的密度和声阻抗率"><a href="#几种物质及人体组织的密度和声阻抗率" class="headerlink" title="几种物质及人体组织的密度和声阻抗率"></a>几种物质及人体组织的密度和声阻抗率</h5><div class="table-container">
 <table>
 <thead>
 <tr>
 <th style="text-align:center">介质</th>
 <th style="text-align:center">密度($kg/m^3$)</th>
-<th style="text-align:center">声阻抗率($N*s/m^3$)</th>
+<th style="text-align:center">声阻抗率($×10^6 N*s/m^3$)</th>
 </tr>
 </thead>
 <tbody>
@@ -677,6 +677,9 @@
 <h3 id="超声波的反射、折射与透射"><a href="#超声波的反射、折射与透射" class="headerlink" title="超声波的反射、折射与透射"></a>超声波的反射、折射与透射</h3><p>超声波在人体组织内传播不仅有衰减 , 同时还存在着反射、折射与透射现象。在人体均质性组织内传播时 , 超声波只沿其传播方向前进 , 此时不存在反射、折射问题。如果超声波在非均质性组织内传播或从一种组织传播到另一种组织 , 由于两种组织声阻抗的不同 , 在声阻抗改变的分界面上便会产生反射、折射与透射</p>
 <p>反射波的能量除取决于两种介质的声阻抗差别外，还取决于界面的大小，反射界面越大，反射波的能量也越强，当反射界面的尺寸远小于超声波波长λ时，可以认为不产生反射。</p>
 <p>当被探查的人体组织结构很小，与入射超声波的波长相差不多时，会产生波的衍射现象。当被探查的组织结构小于入射波波长时，就会产生波的散射。 </p>
+<p>超声波透射系数：</p>
+<script type="math/tex; mode=display">T=\frac{2Z_l}{Z_p+Z_l}=\frac{2\rho_l c_l}{\rho_p c_p+\rho_l c_l}</script><p>以水和压电材料界面为例，$T\approx 0.1$</p>
+<p>为了减少这些不必要的反射，超声波换能器通常配置有匹配的层，其厚度是介质中波长的四分之一：匹配层(Zm)的声阻抗为: $Z_m=(Z_p Z_l)^{\frac{1}{2}}$</p>
 <h3 id="超声波的生物效应"><a href="#超声波的生物效应" class="headerlink" title="超声波的生物效应"></a>超声波的生物效应</h3><p>超声波是一种依靠介质来传播的声波，它具有机械能，因此，在传播的过程中将不可避免地和介质相互作用，产生各种效应。比如声波能量作用于介质，会引起质点高频振动，产生速度、加速度、声压和声强等力学量的改变，从而引起机械效应 ; 由于介质对超声能量的吸收，将使介质温度升高，从而引起热效应 ; 当超声波作用于液体时，会使液体内部压力发生变化，产生压力或拉力，当拉力达到一定强度，可以使液体分子断裂，产生近于真空的空穴，引起所谓空穴效应（也称空化效应）等。当超声作用于生物组织时，以上提到的各种物理效应同样存在，因而会对生物组织产生某些生物效应。比如，由于生物组织的粘滞性而造成的吸收，将使一部分声能转化为热能，使生物组织产生温升，当超声能量达到一定强度的时候，除产生热效应外 , 空化效应的结果还可能使组织细胞产生破坏性形变。因此，虽然目前普遍地认为超声对人体的危害甚微，但诊断用超声剂量并不被认为是越大越好。一般接受的剂量应小于安全剂量 <strong><font color="red">$50 J／cm^2 $</font></strong>，并且最大照射强度低于 <font color="red">$100mW／cm^2$ </font>。然而 , 超声能终归是一种机械能，它不同于各种有损射线，所以，利用超声波所实现的各种检查治疗手段，应该说是比较安全的。</p>
 
       
@@ -828,7 +831,9 @@
         
           
         
-        <span class="site-state-item-count">4</span>
+          
+        
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
