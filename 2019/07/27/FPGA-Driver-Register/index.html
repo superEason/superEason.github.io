@@ -111,15 +111,15 @@
 <meta property="og:site_name" content="Eason的主页">
 <meta property="og:description" content="这篇文章为了配合帅气的明羽更好地完成相控阵Driver部分的FPGA代码，主要涉及AD9106芯片的相关操作">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/child/child%27/2019/07/27/FPGA-Driver-Register/1564199996368.png">
-<meta property="og:image" content="http://yoursite.com/child/child%27/2019/07/27/FPGA-Driver-Register/1564200009080.png">
-<meta property="og:image" content="http://yoursite.com/child/child%27/2019/07/27/FPGA-Driver-Register/1564200198490.png">
-<meta property="og:image" content="http://yoursite.com/child/child%27/2019/07/27/FPGA-Driver-Register/1564650415398.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564199996368.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564200009080.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564200198490.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564650415398.png">
 <meta property="og:updated_time" content="2019-08-06T19:34:30.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FPGA Driver Guider">
 <meta name="twitter:description" content="这篇文章为了配合帅气的明羽更好地完成相控阵Driver部分的FPGA代码，主要涉及AD9106芯片的相关操作">
-<meta name="twitter:image" content="http://yoursite.com/child/child%27/2019/07/27/FPGA-Driver-Register/1564199996368.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564199996368.png">
 
 
 
@@ -425,9 +425,9 @@
 
 <div class="pdf" target="AD9106_cn.pdf" height></div> 
 <h3 id="SPI端口"><a href="#SPI端口" class="headerlink" title="SPI端口"></a>SPI端口</h3><p>当CS变为有效时，SPI地址和数据传输即开始。SPI主器件通过SDIO提供的第一位是读写指示位(高电平表示读操作，低电平表示写操作)。后续15位就是初始寄存器地址，允许写入或读取一组连续地址。</p>
-<p><img src="/child/child'/2019/07/27/FPGA-Driver-Register/1564199996368.png" alt="1564199996368"></p>
-<p><img src="/child/child'/2019/07/27/FPGA-Driver-Register/1564200009080.png" alt="1564200009080"></p>
-<h3 id="寄存器配置"><a href="#寄存器配置" class="headerlink" title="寄存器配置"></a>寄存器配置</h3><h4 id="SPI控制寄存器（0x00）"><a href="#SPI控制寄存器（0x00）" class="headerlink" title="SPI控制寄存器（0x00）"></a>SPI控制寄存器（0x00）</h4><p><img src="/child/child'/2019/07/27/FPGA-Driver-Register/1564200198490.png" alt="1564200198490"></p>
+<p><img src="/2019/07/27/FPGA-Driver-Register/1564199996368.png" alt="1564199996368"></p>
+<p><img src="/2019/07/27/FPGA-Driver-Register/1564200009080.png" alt="1564200009080"></p>
+<h3 id="寄存器配置"><a href="#寄存器配置" class="headerlink" title="寄存器配置"></a>寄存器配置</h3><h4 id="SPI控制寄存器（0x00）"><a href="#SPI控制寄存器（0x00）" class="headerlink" title="SPI控制寄存器（0x00）"></a>SPI控制寄存器（0x00）</h4><p><img src="/2019/07/27/FPGA-Driver-Register/1564200198490.png" alt="1564200198490"></p>
 <p><strong>在本次实验中，应配置为0100010000100010</strong></p>
 <h3 id="电源状态寄存器-POWERCONFIG，地址0x01"><a href="#电源状态寄存器-POWERCONFIG，地址0x01" class="headerlink" title="电源状态寄存器(POWERCONFIG，地址0x01)"></a>电源状态寄存器(POWERCONFIG，地址0x01)</h3><p><strong>在本次实验中，应配置为0x00</strong></p>
 <h3 id="时钟控制寄存器-CLOCKCONFIG，地址0x02"><a href="#时钟控制寄存器-CLOCKCONFIG，地址0x02" class="headerlink" title="时钟控制寄存器(CLOCKCONFIG，地址0x02)"></a>时钟控制寄存器(CLOCKCONFIG，地址0x02)</h3><p><strong>在本次实验中，应配置为0x00</strong></p>
@@ -436,7 +436,7 @@
 <h3 id="DAC模拟增益范围寄存器-DACxRANGE，地址0x08"><a href="#DAC模拟增益范围寄存器-DACxRANGE，地址0x08" class="headerlink" title="DAC模拟增益范围寄存器(DACxRANGE，地址0x08)"></a>DAC模拟增益范围寄存器(DACxRANGE，地址0x08)</h3><p><strong>在本次实验中，应配置为0x0F<font color="red">（不确定）</font></strong></p>
 <h3 id="FSADJ寄存器-DAC4RSET，地址0x09-0x0C"><a href="#FSADJ寄存器-DAC4RSET，地址0x09-0x0C" class="headerlink" title="FSADJ寄存器(DAC4RSET，地址0x09~0x0C)"></a>FSADJ寄存器(DAC4RSET，地址0x09~0x0C)</h3><p><strong>在本次实验中，应配置为0x0F</strong></p>
 <h3 id="校准寄存器-CALCONFIG，地址0x0D-，-补偿失调寄存器-COMPOFFSET，地址0x0E"><a href="#校准寄存器-CALCONFIG，地址0x0D-，-补偿失调寄存器-COMPOFFSET，地址0x0E" class="headerlink" title="校准寄存器(CALCONFIG，地址0x0D)， 补偿失调寄存器(COMPOFFSET，地址0x0E)"></a>校准寄存器(CALCONFIG，地址0x0D)， 补偿失调寄存器(COMPOFFSET，地址0x0E)</h3><p><strong>在本次实验中，应配置为0x0000</strong></p>
-<h3 id="更新模式寄存器-RAMUPDATE，地址0x1D"><a href="#更新模式寄存器-RAMUPDATE，地址0x1D" class="headerlink" title="更新模式寄存器(RAMUPDATE，地址0x1D)"></a>更新模式寄存器(RAMUPDATE，地址0x1D)</h3><p><img src="/child/child'/2019/07/27/FPGA-Driver-Register/1564650415398.png" alt="1564650415398"></p>
+<h3 id="更新模式寄存器-RAMUPDATE，地址0x1D"><a href="#更新模式寄存器-RAMUPDATE，地址0x1D" class="headerlink" title="更新模式寄存器(RAMUPDATE，地址0x1D)"></a>更新模式寄存器(RAMUPDATE，地址0x1D)</h3><p><img src="/2019/07/27/FPGA-Driver-Register/1564650415398.png" alt="1564650415398"></p>
 <font color="red">**全部配置完后更新为0x0001**</font>
 
 
