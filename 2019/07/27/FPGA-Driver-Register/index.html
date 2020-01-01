@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <meta name="description" content="这篇文章为了配合帅气的明羽更好地完成相控阵Driver部分的FPGA代码，主要涉及AD9106芯片的相关操作">
+<meta name="keywords" content="FPGA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FPGA Driver Guider">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/index.html">
+<meta property="og:site_name" content="Eason的主页">
+<meta property="og:description" content="这篇文章为了配合帅气的明羽更好地完成相控阵Driver部分的FPGA代码，主要涉及AD9106芯片的相关操作">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564199996368.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564200009080.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564200198490.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564650415398.png">
+<meta property="og:updated_time" content="2019-08-06T19:34:30.860Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FPGA Driver Guider">
+<meta name="twitter:description" content="这篇文章为了配合帅气的明羽更好地完成相控阵Driver部分的FPGA代码，主要涉及AD9106芯片的相关操作">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/27/FPGA-Driver-Register/1564199996368.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/07/27/FPGA-Driver-Register/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>FPGA Driver Guider | Eason的主页</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Eason的主页</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/FPGA-Driver-Register/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content="冯老师最最最最最最爱小宁宁">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eason的主页">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">FPGA Driver Guider
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-27 11:49:39" itemprop="dateCreated datePublished" datetime="2019-07-27T11:49:39+08:00">2019-07-27</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-07 03:34:30" itemprop="dateModified" datetime="2019-08-07T03:34:30+08:00">2019-08-07</time>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+            <div class="post-description">这篇文章为了配合帅气的明羽更好地完成相控阵Driver部分的FPGA代码，主要涉及AD9106芯片的相关操作</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>`
+
+<div class="pdf" target="AD9106_cn.pdf" height></div> 
+<h3 id="SPI端口"><a href="#SPI端口" class="headerlink" title="SPI端口"></a>SPI端口</h3><p>当CS变为有效时，SPI地址和数据传输即开始。SPI主器件通过SDIO提供的第一位是读写指示位(高电平表示读操作，低电平表示写操作)。后续15位就是初始寄存器地址，允许写入或读取一组连续地址。</p>
+<p><img src="/2019/07/27/FPGA-Driver-Register/1564199996368.png" alt="1564199996368"></p>
+<p><img src="/2019/07/27/FPGA-Driver-Register/1564200009080.png" alt="1564200009080"></p>
+<h3 id="寄存器配置"><a href="#寄存器配置" class="headerlink" title="寄存器配置"></a>寄存器配置</h3><h4 id="SPI控制寄存器（0x00）"><a href="#SPI控制寄存器（0x00）" class="headerlink" title="SPI控制寄存器（0x00）"></a>SPI控制寄存器（0x00）</h4><p><img src="/2019/07/27/FPGA-Driver-Register/1564200198490.png" alt="1564200198490"></p>
+<p><strong>在本次实验中，应配置为0100010000100010</strong></p>
+<h3 id="电源状态寄存器-POWERCONFIG，地址0x01"><a href="#电源状态寄存器-POWERCONFIG，地址0x01" class="headerlink" title="电源状态寄存器(POWERCONFIG，地址0x01)"></a>电源状态寄存器(POWERCONFIG，地址0x01)</h3><p><strong>在本次实验中，应配置为0x00</strong></p>
+<h3 id="时钟控制寄存器-CLOCKCONFIG，地址0x02"><a href="#时钟控制寄存器-CLOCKCONFIG，地址0x02" class="headerlink" title="时钟控制寄存器(CLOCKCONFIG，地址0x02)"></a>时钟控制寄存器(CLOCKCONFIG，地址0x02)</h3><p><strong>在本次实验中，应配置为0x00</strong></p>
+<h3 id="基准电阻寄存器-REFADJ，地址0x03"><a href="#基准电阻寄存器-REFADJ，地址0x03" class="headerlink" title="基准电阻寄存器(REFADJ，地址0x03)"></a>基准电阻寄存器(REFADJ，地址0x03)</h3><p><strong>在本次实验中，应配置为0x00</strong></p>
+<h3 id="DAC模拟增益寄存器-DAC4AGAIN，地址0x04-0x07"><a href="#DAC模拟增益寄存器-DAC4AGAIN，地址0x04-0x07" class="headerlink" title="DAC模拟增益寄存器(DAC4AGAIN，地址0x04-0x07)"></a>DAC模拟增益寄存器(DAC4AGAIN，地址0x04-0x07)</h3><p><strong>在本次实验中，应配置为0000000001111111<font color="red">（不确定）</font></strong></p>
+<h3 id="DAC模拟增益范围寄存器-DACxRANGE，地址0x08"><a href="#DAC模拟增益范围寄存器-DACxRANGE，地址0x08" class="headerlink" title="DAC模拟增益范围寄存器(DACxRANGE，地址0x08)"></a>DAC模拟增益范围寄存器(DACxRANGE，地址0x08)</h3><p><strong>在本次实验中，应配置为0x0F<font color="red">（不确定）</font></strong></p>
+<h3 id="FSADJ寄存器-DAC4RSET，地址0x09-0x0C"><a href="#FSADJ寄存器-DAC4RSET，地址0x09-0x0C" class="headerlink" title="FSADJ寄存器(DAC4RSET，地址0x09~0x0C)"></a>FSADJ寄存器(DAC4RSET，地址0x09~0x0C)</h3><p><strong>在本次实验中，应配置为0x0F</strong></p>
+<h3 id="校准寄存器-CALCONFIG，地址0x0D-，-补偿失调寄存器-COMPOFFSET，地址0x0E"><a href="#校准寄存器-CALCONFIG，地址0x0D-，-补偿失调寄存器-COMPOFFSET，地址0x0E" class="headerlink" title="校准寄存器(CALCONFIG，地址0x0D)， 补偿失调寄存器(COMPOFFSET，地址0x0E)"></a>校准寄存器(CALCONFIG，地址0x0D)， 补偿失调寄存器(COMPOFFSET，地址0x0E)</h3><p><strong>在本次实验中，应配置为0x0000</strong></p>
+<h3 id="更新模式寄存器-RAMUPDATE，地址0x1D"><a href="#更新模式寄存器-RAMUPDATE，地址0x1D" class="headerlink" title="更新模式寄存器(RAMUPDATE，地址0x1D)"></a>更新模式寄存器(RAMUPDATE，地址0x1D)</h3><p><img src="/2019/07/27/FPGA-Driver-Register/1564650415398.png" alt="1564650415398"></p>
+<font color="red">**全部配置完后更新为0x0001**</font>
+
+
+
+<h3 id="命令-状态寄存器-PAT-STATUS，地址0x1E"><a href="#命令-状态寄存器-PAT-STATUS，地址0x1E" class="headerlink" title="命令/状态寄存器(PAT_STATUS，地址0x1E)"></a>命令/状态寄存器(PAT_STATUS，地址0x1E)</h3><p><strong>0x0001</strong></p>
+<h3 id="命令-状态寄存器-PAT-TYPE，地址0x1F"><a href="#命令-状态寄存器-PAT-TYPE，地址0x1F" class="headerlink" title="命令/状态寄存器(PAT_TYPE，地址0x1F)"></a>命令/状态寄存器(PAT_TYPE，地址0x1F)</h3><p><strong>0000</strong></p>
+<p>$f_{out}=F_{CLKP/CLKN}*DDS_TW/2^{24}$</p>
+<font color="red">$F_{CLKP/CLKN}=16MHz$</font>
+
+<p>DDS_TW = 0x100000</p>
+<h3 id="Wave3-Wave4-Wave3-Wave4选择寄存器-WAV-CONFIG，地址0x26，0x27"><a href="#Wave3-Wave4-Wave3-Wave4选择寄存器-WAV-CONFIG，地址0x26，0x27" class="headerlink" title="Wave3/Wave4/Wave3/Wave4选择寄存器(WAV_CONFIG，地址0x26，0x27)"></a>Wave3/Wave4/Wave3/Wave4选择寄存器(WAV_CONFIG，地址0x26，0x27)</h3><p><strong>3131</strong></p>
+<h3 id="DAC数字增益寄存器-DAC-DGAIN，地址0x32-0x35"><a href="#DAC数字增益寄存器-DAC-DGAIN，地址0x32-0x35" class="headerlink" title="DAC数字增益寄存器(DAC_DGAIN，地址0x32~0x35)"></a>DAC数字增益寄存器(DAC_DGAIN，地址0x32~0x35)</h3><p><strong>0x0400</strong></p>
+<p>$f_{out}=F_{CLKP/CLKN}*DDS_TW/2^{24}$</p>
+<font color="red">$F_{CLKP/CLKN}=16MHz$</font>
+
+<p>DDS_TW = 0x100000</p>
+<h3 id="DDS调谐字MSB寄存器-DDS-TW32，地址0x3E"><a href="#DDS调谐字MSB寄存器-DDS-TW32，地址0x3E" class="headerlink" title="DDS调谐字MSB寄存器(DDS_TW32，地址0x3E)"></a>DDS调谐字MSB寄存器(DDS_TW32，地址0x3E)</h3><p><strong>在本次实验中，应配置为0x1000</strong></p>
+<h3 id="DDS调谐字LSB寄存器-DDS-TW1，地址0x3F"><a href="#DDS调谐字LSB寄存器-DDS-TW1，地址0x3F" class="headerlink" title="DDS调谐字LSB寄存器(DDS_TW1，地址0x3F)"></a>DDS调谐字LSB寄存器(DDS_TW1，地址0x3F)</h3><p><strong>在本次实验中，应配置为0x0000</strong></p>
+<h3 id="DDS相位偏移寄存器-DDS-PW，地址0x40-0x43"><a href="#DDS相位偏移寄存器-DDS-PW，地址0x40-0x43" class="headerlink" title="DDS相位偏移寄存器(DDS_PW，地址0x40-0x43)"></a>DDS相位偏移寄存器(DDS_PW，地址0x40-0x43)</h3><p><strong>在本次实验中，应配置为0x02, 0x04, 0x06, 0x08<font color="red">（不确定）</font></strong></p>
+<h3 id="DDS周期数4寄存器-DDS-CYC4，地址0x53，0x57，0x5B，0x5F"><a href="#DDS周期数4寄存器-DDS-CYC4，地址0x53，0x57，0x5B，0x5F" class="headerlink" title="DDS周期数4寄存器(DDS_CYC4，地址0x53，0x57，0x5B，0x5F)"></a>DDS周期数4寄存器(DDS_CYC4，地址0x53，0x57，0x5B，0x5F)</h3><p>在本次实验中，应配置为0x000A</p>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/FPGA/" rel="tag"># FPGA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/07/XiAn/" rel="next" title="西安">
+                <i class="fa fa-chevron-left"></i> 西安
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/27/Piezoelectric-materials/" rel="prev" title="Piezoelectric Materials">
+                Piezoelectric Materials <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt>
+  
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description motion-element" itemprop="description">冯老师最最最最最最爱小宁宁</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:supereaosn@sjtu.edu.cn" title="E-Mail &rarr; mailto:supereaosn@sjtu.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SPI端口"><span class="nav-number">1.</span> <span class="nav-text">SPI端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寄存器配置"><span class="nav-number">2.</span> <span class="nav-text">寄存器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SPI控制寄存器（0x00）"><span class="nav-number">2.1.</span> <span class="nav-text">SPI控制寄存器（0x00）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电源状态寄存器-POWERCONFIG，地址0x01"><span class="nav-number">3.</span> <span class="nav-text">电源状态寄存器(POWERCONFIG，地址0x01)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时钟控制寄存器-CLOCKCONFIG，地址0x02"><span class="nav-number">4.</span> <span class="nav-text">时钟控制寄存器(CLOCKCONFIG，地址0x02)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基准电阻寄存器-REFADJ，地址0x03"><span class="nav-number">5.</span> <span class="nav-text">基准电阻寄存器(REFADJ，地址0x03)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DAC模拟增益寄存器-DAC4AGAIN，地址0x04-0x07"><span class="nav-number">6.</span> <span class="nav-text">DAC模拟增益寄存器(DAC4AGAIN，地址0x04-0x07)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DAC模拟增益范围寄存器-DACxRANGE，地址0x08"><span class="nav-number">7.</span> <span class="nav-text">DAC模拟增益范围寄存器(DACxRANGE，地址0x08)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FSADJ寄存器-DAC4RSET，地址0x09-0x0C"><span class="nav-number">8.</span> <span class="nav-text">FSADJ寄存器(DAC4RSET，地址0x09~0x0C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#校准寄存器-CALCONFIG，地址0x0D-，-补偿失调寄存器-COMPOFFSET，地址0x0E"><span class="nav-number">9.</span> <span class="nav-text">校准寄存器(CALCONFIG，地址0x0D)， 补偿失调寄存器(COMPOFFSET，地址0x0E)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新模式寄存器-RAMUPDATE，地址0x1D"><span class="nav-number">10.</span> <span class="nav-text">更新模式寄存器(RAMUPDATE，地址0x1D)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令-状态寄存器-PAT-STATUS，地址0x1E"><span class="nav-number">11.</span> <span class="nav-text">命令/状态寄存器(PAT_STATUS，地址0x1E)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令-状态寄存器-PAT-TYPE，地址0x1F"><span class="nav-number">12.</span> <span class="nav-text">命令/状态寄存器(PAT_TYPE，地址0x1F)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wave3-Wave4-Wave3-Wave4选择寄存器-WAV-CONFIG，地址0x26，0x27"><span class="nav-number">13.</span> <span class="nav-text">Wave3/Wave4/Wave3/Wave4选择寄存器(WAV_CONFIG，地址0x26，0x27)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DAC数字增益寄存器-DAC-DGAIN，地址0x32-0x35"><span class="nav-number">14.</span> <span class="nav-text">DAC数字增益寄存器(DAC_DGAIN，地址0x32~0x35)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDS调谐字MSB寄存器-DDS-TW32，地址0x3E"><span class="nav-number">15.</span> <span class="nav-text">DDS调谐字MSB寄存器(DDS_TW32，地址0x3E)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDS调谐字LSB寄存器-DDS-TW1，地址0x3F"><span class="nav-number">16.</span> <span class="nav-text">DDS调谐字LSB寄存器(DDS_TW1，地址0x3F)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDS相位偏移寄存器-DDS-PW，地址0x40-0x43"><span class="nav-number">17.</span> <span class="nav-text">DDS相位偏移寄存器(DDS_PW，地址0x40-0x43)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDS周期数4寄存器-DDS-CYC4，地址0x53，0x57，0x5B，0x5F"><span class="nav-number">18.</span> <span class="nav-text">DDS周期数4寄存器(DDS_CYC4，地址0x53，0x57，0x5B，0x5F)</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '520px'
+        });
+      });
+    },
+  });
+}
+</script>
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+  
+
+</body>
+</html>
