@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <meta name="description" content="工作周报2020/2/10 看模拟COMS集成电路设计mooc  multisim仿真  伯克利第一版方案，单FET直接调制阻抗    2020/2/11 multisim仿真 伯克利第二版方案，整流与MOS管电流调制    2020/2/12 multisim仿真 LNA设计    2020/2/13 multisim仿真 有源整流稳压电路设计    2020/2/14 multisim仿真">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020week07">
+<meta property="og:url" content="http://yoursite.com/2020/02/14/2020week07/index.html">
+<meta property="og:site_name" content="Eason的主页">
+<meta property="og:description" content="工作周报2020/2/10 看模拟COMS集成电路设计mooc  multisim仿真  伯克利第一版方案，单FET直接调制阻抗    2020/2/11 multisim仿真 伯克利第二版方案，整流与MOS管电流调制    2020/2/12 multisim仿真 LNA设计    2020/2/13 multisim仿真 有源整流稳压电路设计    2020/2/14 multisim仿真">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2020/02/14/2020week07/image-20200214171020339.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/14/2020week07/image-20200214164253005.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/14/2020week07/image-20200214163641722.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/14/2020week07/image-20200214163609175.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/14/2020week07/image-20200214165341150.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/14/2020week07/image-20200214165617867.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/14/2020week07/image-20200214170842706.png">
+<meta property="og:updated_time" content="2020-02-14T09:21:52.923Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2020week07">
+<meta name="twitter:description" content="工作周报2020/2/10 看模拟COMS集成电路设计mooc  multisim仿真  伯克利第一版方案，单FET直接调制阻抗    2020/2/11 multisim仿真 伯克利第二版方案，整流与MOS管电流调制    2020/2/12 multisim仿真 LNA设计    2020/2/13 multisim仿真 有源整流稳压电路设计    2020/2/14 multisim仿真">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/14/2020week07/image-20200214171020339.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/02/14/2020week07/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>2020week07 | Eason的主页</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Eason的主页</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/14/2020week07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content="冯老师最最最最最最爱小宁宁">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eason的主页">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2020week07
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-02-14 15:43:11 / 修改时间：17:21:52" itemprop="dateCreated datePublished" datetime="2020-02-14T15:43:11+08:00">2020-02-14</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工作周报/" itemprop="url" rel="index"><span itemprop="name">工作周报</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h1 id="工作周报"><a href="#工作周报" class="headerlink" title="工作周报"></a>工作周报</h1><h2 id="2020-2-10"><a href="#2020-2-10" class="headerlink" title="2020/2/10"></a>2020/2/10</h2><ul>
+<li><p>看模拟COMS集成电路设计mooc</p>
+</li>
+<li><p>multisim仿真</p>
+<ul>
+<li>伯克利第一版方案，单FET直接调制阻抗</li>
+</ul>
+</li>
+</ul>
+<h2 id="2020-2-11"><a href="#2020-2-11" class="headerlink" title="2020/2/11"></a>2020/2/11</h2><ul>
+<li>multisim仿真<ul>
+<li>伯克利第二版方案，整流与MOS管电流调制</li>
+</ul>
+</li>
+</ul>
+<h2 id="2020-2-12"><a href="#2020-2-12" class="headerlink" title="2020/2/12"></a>2020/2/12</h2><ul>
+<li>multisim仿真<ul>
+<li>LNA设计</li>
+</ul>
+</li>
+</ul>
+<h2 id="2020-2-13"><a href="#2020-2-13" class="headerlink" title="2020/2/13"></a>2020/2/13</h2><ul>
+<li>multisim仿真<ul>
+<li>有源整流稳压电路设计</li>
+</ul>
+</li>
+</ul>
+<h2 id="2020-2-14"><a href="#2020-2-14" class="headerlink" title="2020/2/14"></a>2020/2/14</h2><ul>
+<li>multisim仿真<ul>
+<li>阻抗匹配，滤波，调制电路设计</li>
+<li>参数优化</li>
+</ul>
+</li>
+</ul>
+<h2 id="已仿真功能"><a href="#已仿真功能" class="headerlink" title="已仿真功能"></a>已仿真功能</h2><p><img src="/2020/02/14/2020week07/image-20200214171020339.png" alt="image-20200214171020339"></p>
+<h3 id="LNA"><a href="#LNA" class="headerlink" title="LNA"></a>LNA</h3><ul>
+<li><p>参考指标：</p>
+<ul>
+<li><img src="/2020/02/14/2020week07/image-20200214164253005.png" alt="image-20200214164253005" style="zoom:67%;"></li>
+</ul>
+</li>
+<li><p><img src="/2020/02/14/2020week07/image-20200214163641722.png" alt="image-20200214163641722" style="zoom:50%;"></p>
+</li>
+<li><p>仿神经元信号：100Hz放电频率，1kHz动作电位频率，1mV带白噪声信号</p>
+</li>
+<li>输出信号，50mV（最大1V）放大信号<ul>
+<li><img src="/2020/02/14/2020week07/image-20200214163609175.png" alt="image-20200214163609175" style="zoom: 50%;"></li>
+<li>主要参考了《模拟电子技术》书上的精密仪表放大器以及两篇论文，使用集成运放和电阻电容构成，放大倍数可调</li>
+</ul>
+</li>
+</ul>
+<h3 id="整流稳压电路"><a href="#整流稳压电路" class="headerlink" title="整流稳压电路"></a>整流稳压电路</h3><ul>
+<li><p><img src="/2020/02/14/2020week07/image-20200214165341150.png" alt="image-20200214165341150"></p>
+</li>
+<li><p>设计指标：5Vrms，100KHZ电压转换为2V稳压直流</p>
+<ul>
+<li><img src="/2020/02/14/2020week07/image-20200214165617867.png" alt="image-20200214165617867"></li>
+</ul>
+</li>
+<li>整流电路使用有源MOS管电桥，导通压降降低，功耗小</li>
+<li>使用2V的稳压二极管和滤波电容</li>
+</ul>
+<h3 id="电流调制"><a href="#电流调制" class="headerlink" title="电流调制"></a>电流调制</h3><ul>
+<li>参考共模电压约1V，最大输入电压2V，最大Vds约3V，又因为电源内阻很大，因此使用Vgs(th)=0.75V，Io=11uA的N沟道增强型MOS管，型号BSS806N<pre><code>- &lt;img src=&quot;2020week07/image-20200214170756198.png&quot; alt=&quot;image-20200214170756198&quot; style=&quot;zoom: 67%;&quot; /&gt;
+</code></pre></li>
+</ul>
+<ul>
+<li><img src="/2020/02/14/2020week07/image-20200214170842706.png" alt="image-20200214170842706"></li>
+</ul>
+<h3 id="还存在问题"><a href="#还存在问题" class="headerlink" title="还存在问题"></a>还存在问题</h3><ul>
+<li>效率很低</li>
+<li>调制是非线性调制</li>
+<li>LNA放大信号有一些失真</li>
+<li>达到稳压的时间较长，稳压输出在调制过程中有较大波动</li>
+<li>系统有一些相移和时延</li>
+<li>系统不够稳定，对Vdd要求高</li>
+</ul>
+<h1 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h1><ul>
+<li>更换元件和参数</li>
+<li>使用新的电路模型（线性调制）</li>
+<li>尝试用pspice仿真</li>
+<li>把集成运放换成MOSFET电路</li>
+<li>继续学习模拟集成电路设计</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/07/2020week06/" rel="next" title="2020week06">
+                <i class="fa fa-chevron-left"></i> 2020week06
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/20/Review2020Feb/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt>
+  
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description motion-element" itemprop="description">冯老师最最最最最最爱小宁宁</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:supereaosn@sjtu.edu.cn" title="E-Mail &rarr; mailto:supereaosn@sjtu.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作周报"><span class="nav-number">1.</span> <span class="nav-text">工作周报</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-2-10"><span class="nav-number">1.1.</span> <span class="nav-text">2020/2/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-2-11"><span class="nav-number">1.2.</span> <span class="nav-text">2020/2/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-2-12"><span class="nav-number">1.3.</span> <span class="nav-text">2020/2/12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-2-13"><span class="nav-number">1.4.</span> <span class="nav-text">2020/2/13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-2-14"><span class="nav-number">1.5.</span> <span class="nav-text">2020/2/14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#已仿真功能"><span class="nav-number">1.6.</span> <span class="nav-text">已仿真功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LNA"><span class="nav-number">1.6.1.</span> <span class="nav-text">LNA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整流稳压电路"><span class="nav-number">1.6.2.</span> <span class="nav-text">整流稳压电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电流调制"><span class="nav-number">1.6.3.</span> <span class="nav-text">电流调制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还存在问题"><span class="nav-number">1.6.4.</span> <span class="nav-text">还存在问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下周计划"><span class="nav-number">2.</span> <span class="nav-text">下周计划</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '520px'
+        });
+      });
+    },
+  });
+}
+</script>
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+  
+
+</body>
+</html>

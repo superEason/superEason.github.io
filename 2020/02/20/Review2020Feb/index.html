@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <meta name="description" content="Paper TitleSwitchless Multiplexing of Graphene Active Sensor Arrays for Brain Mapping 1. [Summary] This article present a new approach that use frequency-division multiplexing (FDM) of graphene soluti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eason的主页">
+<meta property="og:url" content="http://yoursite.com/2020/02/20/Review2020Feb/index.html">
+<meta property="og:site_name" content="Eason的主页">
+<meta property="og:description" content="Paper TitleSwitchless Multiplexing of Graphene Active Sensor Arrays for Brain Mapping 1. [Summary] This article present a new approach that use frequency-division multiplexing (FDM) of graphene soluti">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-21T10:25:56.058Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Eason的主页">
+<meta name="twitter:description" content="Paper TitleSwitchless Multiplexing of Graphene Active Sensor Arrays for Brain Mapping 1. [Summary] This article present a new approach that use frequency-division multiplexing (FDM) of graphene soluti">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/02/20/Review2020Feb/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title> | Eason的主页</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Eason的主页</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/20/Review2020Feb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content="冯老师最最最最最最爱小宁宁">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eason的主页">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-02-20 22:44:45" itemprop="dateCreated datePublished" datetime="2020-02-20T22:44:45+08:00">2020-02-20</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-02-21 18:25:56" itemprop="dateModified" datetime="2020-02-21T18:25:56+08:00">2020-02-21</time>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Paper-Title"><a href="#Paper-Title" class="headerlink" title="Paper Title"></a>Paper Title</h3><p><strong>Switchless Multiplexing of Graphene Active Sensor Arrays for Brain Mapping</strong></p>
+<h4 id="1-Summary"><a href="#1-Summary" class="headerlink" title="1. [Summary]"></a>1. [Summary]</h4><blockquote>
+<p>This article present a new approach that use frequency-division multiplexing (FDM) of graphene solution-gated field-effect-transistors (g-SGFETs) in order to eliminate the need for onsite switches and to reduce the fabrication complexity of high-count neural probes.</p>
+<p>The article first introduced some basic concepts and how FDM system works. Then, it analyzed the In-vitro characterization of g-SGFETs. Next, author discussed the scalability of g-SGFET arrays multiplexed in the frequency-domain. At last, the article showed the in-vivo evaluation result of FDM graphene neural probes.</p>
+</blockquote>
+<h4 id="2-Strengths"><a href="#2-Strengths" class="headerlink" title="2. [Strengths]"></a>2. [Strengths]</h4><ul>
+<li><p>The problem of high complexity front end circuit stated by the article is a common and significant problem in multi-channel neural interface design.</p>
+</li>
+<li><p>Good characterization and performance  in some aspects:</p>
+<ul>
+<li>Reduce the fabrication complexity</li>
+<li>sensitivity of g-SGFETs does not differ dramatically in both DC and AM modes, showing only slight changes in its 𝑉𝑔𝑠 dependence.</li>
+<li>higher mobility and a smaller interface capacitance compared with other active sensors</li>
+<li>good capability for the recording of infra-slow neural activity with a high spatial resolution</li>
+<li>biocompatibility of graphene</li>
+</ul>
+</li>
+<li><p>There is sufficient experiments to show good characterization and scalability of the system</p>
+</li>
+<li>The FDM solution is easy to understand and realize.</li>
+<li>Several Schemes are given to improve scalability<ul>
+<li>A scheme of reducing resistance is given to reduce crosstalk</li>
+<li>using Digital filters and orthogonal modulation</li>
+<li>Adjust the phase of carrier to minimize the amplitude of the carriers superposition</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-Weaknesses"><a href="#3-Weaknesses" class="headerlink" title="3. [Weaknesses]"></a>3. [Weaknesses]</h4><ul>
+<li>The order of the pictures is not quite right, Figure3 is behind Figure4</li>
+<li>Several mistakes. For example, missing fc3 in Figure4a</li>
+<li>g-SGFETs is not small enough</li>
+<li>Maximum carrier frequency is 600kHz and each sensor takes tens of kHz bandwidth(Digital filters and orthogonal modulation are needed). Thar means it can only support a few number of carrier.</li>
+<li>No enough comparison with other probes</li>
+<li>Analysis lack of standards. There needs to be a standard by which to evaluate the results of experiments</li>
+<li>The in-vivo only test 4x8 array, not too much channel</li>
+</ul>
+<h4 id="4-Overall-rating"><a href="#4-Overall-rating" class="headerlink" title="4. [Overall rating]"></a>4. [Overall rating]</h4><ul>
+<li>week accept</li>
+</ul>
+<h4 id="5-Question"><a href="#5-Question" class="headerlink" title="5. [Question]"></a>5. [Question]</h4><ul>
+<li><p>How to get that many carriers? carrier-generating circuits can become very complicated. Can you show your carrier-generating solution.</p>
+</li>
+<li><p>Besides oscillator, FDM need a lot of filters and synchronizers. This part of circuit is much more complex than switches in TDM. So, why use FDM?</p>
+</li>
+<li><p>Can you give a comparison in size, channel number and other aspects between your probe and other solutions.</p>
+</li>
+<li><p>The g-SGFETs is not small enough, it seems that this scheme cannot achieve many channels</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/14/2020week07/" rel="next" title="2020week07">
+                <i class="fa fa-chevron-left"></i> 2020week07
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/21/2020week08/" rel="prev" title="2020week08">
+                2020week08 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt>
+  
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description motion-element" itemprop="description">冯老师最最最最最最爱小宁宁</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:supereaosn@sjtu.edu.cn" title="E-Mail &rarr; mailto:supereaosn@sjtu.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paper-Title"><span class="nav-number">1.</span> <span class="nav-text">Paper Title</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Summary"><span class="nav-number">1.1.</span> <span class="nav-text">1. [Summary]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Strengths"><span class="nav-number">1.2.</span> <span class="nav-text">2. [Strengths]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Weaknesses"><span class="nav-number">1.3.</span> <span class="nav-text">3. [Weaknesses]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Overall-rating"><span class="nav-number">1.4.</span> <span class="nav-text">4. [Overall rating]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Question"><span class="nav-number">1.5.</span> <span class="nav-text">5. [Question]</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '520px'
+        });
+      });
+    },
+  });
+}
+</script>
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+  
+
+</body>
+</html>

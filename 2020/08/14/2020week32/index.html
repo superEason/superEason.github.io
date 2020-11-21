@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <meta name="description" content="工作周报周一调研整理了spike算法的相关知识 高帧率和稀疏性（帧率越高，稀疏性越高），对于神经信号同样有这样特点，为了记录到神经脉冲信号的幅度以及宽度，需要较高的采样率(1kHz)，但采集的得到的信号又具有非常大的稀疏性，因此针对降采样和利用稀疏性有一定的研究价值，比如与与速度（events频率）相关的动态采样率 基于STDP的SNN算法本身没太多值得研究，但是如果能找到好的应用场景或者具有优">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020week32">
+<meta property="og:url" content="http://yoursite.com/2020/08/14/2020week32/index.html">
+<meta property="og:site_name" content="Eason的主页">
+<meta property="og:description" content="工作周报周一调研整理了spike算法的相关知识 高帧率和稀疏性（帧率越高，稀疏性越高），对于神经信号同样有这样特点，为了记录到神经脉冲信号的幅度以及宽度，需要较高的采样率(1kHz)，但采集的得到的信号又具有非常大的稀疏性，因此针对降采样和利用稀疏性有一定的研究价值，比如与与速度（events频率）相关的动态采样率 基于STDP的SNN算法本身没太多值得研究，但是如果能找到好的应用场景或者具有优">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-08-14T13:30:17.458Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2020week32">
+<meta name="twitter:description" content="工作周报周一调研整理了spike算法的相关知识 高帧率和稀疏性（帧率越高，稀疏性越高），对于神经信号同样有这样特点，为了记录到神经脉冲信号的幅度以及宽度，需要较高的采样率(1kHz)，但采集的得到的信号又具有非常大的稀疏性，因此针对降采样和利用稀疏性有一定的研究价值，比如与与速度（events频率）相关的动态采样率 基于STDP的SNN算法本身没太多值得研究，但是如果能找到好的应用场景或者具有优">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/08/14/2020week32/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>2020week32 | Eason的主页</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Eason的主页</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/14/2020week32/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content="冯老师最最最最最最爱小宁宁">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eason的主页">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2020week32
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-08-14 12:56:45 / 修改时间：21:30:17" itemprop="dateCreated datePublished" datetime="2020-08-14T12:56:45+08:00">2020-08-14</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工作周报/" itemprop="url" rel="index"><span itemprop="name">工作周报</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h1 id="工作周报"><a href="#工作周报" class="headerlink" title="工作周报"></a>工作周报</h1><h3 id="周一调研整理了spike算法的相关知识"><a href="#周一调研整理了spike算法的相关知识" class="headerlink" title="周一调研整理了spike算法的相关知识"></a>周一调研整理了spike算法的相关知识</h3><ul>
+<li>高帧率和稀疏性（帧率越高，稀疏性越高），对于神经信号同样有这样特点，为了记录到神经脉冲信号的幅度以及宽度，需要较高的采样率(1kHz)，但采集的得到的信号又具有非常大的稀疏性，因此针对降采样和利用稀疏性有一定的研究价值，比如与与速度（events频率）相关的动态采样率</li>
+<li>基于STDP的SNN算法本身没太多值得研究，但是如果能找到好的应用场景或者具有优势的任务值得讨论。</li>
+<li>CNN到SNN的迁移，以及，spike events重新编码的方案值得再讨论。<ul>
+<li>训练一个CNN网络，映射到PIM，PIM处理events的方案是否可行</li>
+<li>从spike得到一个新的图，这个图可能是通过时空距离、可能是通过统计规律，也可能是通过数学上的变换，或者还可以通过直接逆向量化的方法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="调研了纯模拟计算"><a href="#调研了纯模拟计算" class="headerlink" title="调研了纯模拟计算"></a>调研了纯模拟计算</h3><ul>
+<li><p>纯模拟计算目前有一些做器件的组在做，比如马萨诸塞大学的Qiangfei Xia，他做过基于RRAM array的纯模拟的DCT处理器，使用纯模拟电路对图像或者声音数据进行处理。该组还利用RRAM实现了LSTM和强化学习的算法、</p>
+<ul>
+<li><strong>Analogue signal and image processing with large memristor crossbars</strong>，<strong>Nature Electronics</strong> 1, 52-59(2018). DOI: <a href="https://doi.org/10.1038/s41928-017-0002-z" target="_blank" rel="noopener">10.1038/s41928-017-0002-z</a> (Cover article of the inaugural issue)</li>
+<li><strong>Fully memristive neural networks for pattern classification with unsupervised learning</strong>，<strong><em>Nature Electronics\</em></strong> 1, 137-145(2018). DOI: <a href="https://doi.org/10.1038/s41928-018-0023-2" target="_blank" rel="noopener">10.1038/s41928-018-0023-2</a></li>
+<li><strong>Reinforcement learning with analogue memristor arrays</strong>，<strong>Nature Electronics</strong> 2, 115-124(2019). DOI: <a href="https://www.nature.com/articles/s41928-019-0221-6" target="_blank" rel="noopener">10.1038/s41928-019-0221-6</a></li>
+</ul>
+</li>
+<li>对于纯模拟计算这个方向，主要有四个瓶颈问题<ul>
+<li>器件层面，如何增大器件密度、降低电导、提高器件的性能和稳定性</li>
+<li>电路层面，模拟信号输出与RRAM阵列的接口电路，如何设计这个接口电路，使得模拟信号能准确地转换为RRAM器件的阻值，我有一些粗糙的想法：<ul>
+<li>增加一个限流电路，限制电流到一个无法瞬间使器件导通的值，这样就可以记录下模拟信号的脉冲宽度</li>
+<li>触发电路，电平达到某个值便触发一个set脉冲改变器件的值，这样就可以记录下模拟信号的幅度</li>
+</ul>
+</li>
+<li>架构和算法层面，如何利用数据和任务的的特性（比如稀疏性），如何映射更多更合适的算法，比如PCA</li>
+</ul>
+</li>
+</ul>
+<h3 id="我的想法"><a href="#我的想法" class="headerlink" title="我的想法"></a>我的想法</h3><ul>
+<li>神经尘埃的工作模式很像IOT中的边缘计算，每一个神经尘埃是一个终端，体外有一个云端，使用PIM的motivation有以下几点：<ul>
+<li>终端（dust）和终端之间以及云端（体外处理器）和终端之间带宽受限（~kbps）</li>
+<li>终端（dust）需要极低功耗</li>
+<li>希望尽可能降低“终端（dust）-云端（体外处理器）-终端（dust）”这一工作模式的时延</li>
+</ul>
+</li>
+<li>基于以上考虑，可以使用PIM的方案对传感器得到的模拟信号进行预处理，不一定是神经信号，可以是温度、PH、光、振动的各类传感器，这些传感器都是模拟信号。使用PIM对模拟数据进行预处理（降采样、滤波、数据压缩），然后将数据传到云端。</li>
+<li>RRAM适用于作为被动的监控器件，对于稀疏的窄脉冲信号的监测，往往需要很高的采样率，利用RRAM就可以起到实时监控的作用并实现降采样。除了神经元信号具有这样的特征，高帧频事件相机的输出信号也具有这样的特征。</li>
+<li>PIM只是工具不是目的，作为边缘计算的节点，多个神经尘埃将数据汇聚到云，在云端完成主要的计算，而在终端，一些简单的闭环逻辑可以直接实现，复杂逻辑则处理后送到云端，由此实现一个在体内的物联网</li>
+</ul>
+<h3 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h3><p>我想评估两个电路的功耗，不知道该怎么做，也没有查到</p>
+<ul>
+<li>使用AD实时采样（不需要放大模拟信号，模拟信号幅度&lt;100mV）</li>
+<li>放大模拟信号（幅度约2V），但接到一个高阻值的负载，不采样</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/07/2020week31/" rel="next" title="2020week31">
+                <i class="fa fa-chevron-left"></i> 2020week31
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/04/2020week35/" rel="prev" title="2020week35">
+                2020week35 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt>
+  
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description motion-element" itemprop="description">冯老师最最最最最最爱小宁宁</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:supereaosn@sjtu.edu.cn" title="E-Mail &rarr; mailto:supereaosn@sjtu.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作周报"><span class="nav-number">1.</span> <span class="nav-text">工作周报</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#周一调研整理了spike算法的相关知识"><span class="nav-number">1.0.1.</span> <span class="nav-text">周一调研整理了spike算法的相关知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调研了纯模拟计算"><span class="nav-number">1.0.2.</span> <span class="nav-text">调研了纯模拟计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我的想法"><span class="nav-number">1.0.3.</span> <span class="nav-text">我的想法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下周计划"><span class="nav-number">1.0.4.</span> <span class="nav-text">下周计划</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '520px'
+        });
+      });
+    },
+  });
+}
+</script>
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+  
+
+</body>
+</html>

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <meta name="description" content="VLSI实验报告 姓名：冯寅潇 学号：2020311833 院系：交叉信息研究院计算机系  实验1：硬件描述语言设计数字电路三输入与非门12345module NAND(a,b,c,y);    output y;    input a,b,c;    assign y = ~(a&amp;amp;b&amp;amp;c);endmodule 2-4译码器Verilog代码12345678module deco">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VLSISI_Lab1">
+<meta property="og:url" content="http://yoursite.com/2020/10/16/VLSI-Lab1/index.html">
+<meta property="og:site_name" content="Eason的主页">
+<meta property="og:description" content="VLSI实验报告 姓名：冯寅潇 学号：2020311833 院系：交叉信息研究院计算机系  实验1：硬件描述语言设计数字电路三输入与非门12345module NAND(a,b,c,y);    output y;    input a,b,c;    assign y = ~(a&amp;amp;b&amp;amp;c);endmodule 2-4译码器Verilog代码12345678module deco">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2020/10/16/VLSI-Lab1/image-20201016133322456.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/16/VLSI-Lab1/image-20201016163229390.png">
+<meta property="og:updated_time" content="2020-10-16T08:38:02.101Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VLSISI_Lab1">
+<meta name="twitter:description" content="VLSI实验报告 姓名：冯寅潇 学号：2020311833 院系：交叉信息研究院计算机系  实验1：硬件描述语言设计数字电路三输入与非门12345module NAND(a,b,c,y);    output y;    input a,b,c;    assign y = ~(a&amp;amp;b&amp;amp;c);endmodule 2-4译码器Verilog代码12345678module deco">
+<meta name="twitter:image" content="http://yoursite.com/2020/10/16/VLSI-Lab1/image-20201016133322456.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/10/16/VLSI-Lab1/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>VLSISI_Lab1 | Eason的主页</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Eason的主页</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/16/VLSI-Lab1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content="冯老师最最最最最最爱小宁宁">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eason的主页">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">VLSISI_Lab1
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-16 11:08:09 / 修改时间：16:38:02" itemprop="dateCreated datePublished" datetime="2020-10-16T11:08:09+08:00">2020-10-16</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h1 id="VLSI实验报告"><a href="#VLSI实验报告" class="headerlink" title="VLSI实验报告"></a>VLSI实验报告</h1><ul>
+<li>姓名：冯寅潇</li>
+<li>学号：2020311833</li>
+<li>院系：交叉信息研究院计算机系</li>
+</ul>
+<h2 id="实验1：硬件描述语言设计数字电路"><a href="#实验1：硬件描述语言设计数字电路" class="headerlink" title="实验1：硬件描述语言设计数字电路"></a>实验1：硬件描述语言设计数字电路</h2><h3 id="三输入与非门"><a href="#三输入与非门" class="headerlink" title="三输入与非门"></a>三输入与非门</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> NAND(a,b,c,y);</span><br><span class="line">    <span class="keyword">output</span> y;</span><br><span class="line">    <span class="keyword">input</span> a,b,c;</span><br><span class="line">    <span class="keyword">assign</span> y = ~(a&amp;b&amp;c);</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-4译码器"><a href="#2-4译码器" class="headerlink" title="2-4译码器"></a>2-4译码器</h3><h4 id="Verilog代码"><a href="#Verilog代码" class="headerlink" title="Verilog代码"></a>Verilog代码</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> decoder(Cs,A1,A0,Y0,Y1,Y2,Y3);</span><br><span class="line">    <span class="keyword">output</span> Y0,Y1,Y2,Y3;</span><br><span class="line">    <span class="keyword">input</span> Cs,A1,A0;</span><br><span class="line">    <span class="keyword">assign</span> Y0 = Cs || A1 || A0;</span><br><span class="line">    <span class="keyword">assign</span> Y1 = Cs || A1 || ~A0;</span><br><span class="line">    <span class="keyword">assign</span> Y2 = Cs || ~A1 || A0;</span><br><span class="line">    <span class="keyword">assign</span> Y3 = Cs || ~A1 || ~A0;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h4 id="Testbench"><a href="#Testbench" class="headerlink" title="Testbench"></a>Testbench</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="meta-keyword">timescale</span> 1ns/1ns</span></span><br><span class="line"><span class="keyword">module</span> test_bench;</span><br><span class="line"><span class="keyword">reg</span> Cs = <span class="number">1'b0</span>, A1 = <span class="number">1'b0</span>, A0 = <span class="number">1'b0</span>;</span><br><span class="line"><span class="keyword">wire</span> Y0,Y1,Y2,Y3;</span><br><span class="line"><span class="keyword">initial</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    #<span class="number">20</span> </span><br><span class="line">    Cs = <span class="number">1'b0</span>;</span><br><span class="line">    A1 = <span class="number">1'b0</span>; </span><br><span class="line">    A0 = <span class="number">1'b1</span>;</span><br><span class="line">    #<span class="number">20</span> </span><br><span class="line">    Cs = <span class="number">1'b0</span>;</span><br><span class="line">    A1 = <span class="number">1'b1</span>; </span><br><span class="line">    A0 = <span class="number">1'b0</span>;</span><br><span class="line">    #<span class="number">20</span> </span><br><span class="line">    Cs = <span class="number">1'b0</span>;</span><br><span class="line">    A1 = <span class="number">1'b1</span>; </span><br><span class="line">    A0 = <span class="number">1'b1</span>;</span><br><span class="line">    #<span class="number">20</span> </span><br><span class="line">    Cs = <span class="number">1'b1</span>;</span><br><span class="line">    A1 = <span class="number">1'b0</span>; </span><br><span class="line">    A0 = <span class="number">1'b0</span>;</span><br><span class="line">    #<span class="number">20</span> </span><br><span class="line">    Cs = <span class="number">1'b1</span>;</span><br><span class="line">    A1 = <span class="number">1'b0</span>; </span><br><span class="line">    A0 = <span class="number">1'b1</span>;</span><br><span class="line">    #<span class="number">20</span> </span><br><span class="line">    Cs = <span class="number">1'b1</span>;</span><br><span class="line">    A1 = <span class="number">1'b1</span>; </span><br><span class="line">    A0 = <span class="number">1'b0</span>;</span><br><span class="line">    #<span class="number">20</span> </span><br><span class="line">    Cs = <span class="number">1'b1</span>;</span><br><span class="line">    A1 = <span class="number">1'b1</span>; </span><br><span class="line">    A0 = <span class="number">1'b1</span>;</span><br><span class="line">    #<span class="number">20</span> <span class="built_in">$finish</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">decoder uut(Cs,A1,A0,Y0,Y1,Y2,Y3);</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h4 id="Wave"><a href="#Wave" class="headerlink" title="Wave"></a>Wave</h4><p><img src="/2020/10/16/VLSI-Lab1/image-20201016133322456.png" alt="image-20201016133322456" style="zoom:150%;"></p>
+<h4 id="Coverage-Report"><a href="#Coverage-Report" class="headerlink" title="Coverage Report"></a>Coverage Report</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Coverage Report Summary Data by file</span><br><span class="line"></span><br><span class="line">=================================================================================</span><br><span class="line">=== File: /data2/class/cyc/cyc8/MyDesignDir/Lab1/Decoder/decoder.v</span><br><span class="line">=================================================================================</span><br><span class="line">    Enabled Coverage              Bins      Hits    Misses  Coverage</span><br><span class="line">    ----------------              ----      ----    ------  --------</span><br><span class="line">    Expressions                     12        12         0   100.00%</span><br><span class="line">    Statements                       4         4         0   100.00%</span><br><span class="line"></span><br><span class="line">=================================================================================</span><br><span class="line">=== File: /data2/class/cyc/cyc8/MyDesignDir/Lab1/Decoder/testbench_decoder.v</span><br><span class="line">=================================================================================</span><br><span class="line">    Enabled Coverage              Bins      Hits    Misses  Coverage</span><br><span class="line">    ----------------              ----      ----    ------  --------</span><br><span class="line">    Statements                      33        33         0   100.00%</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Total Coverage By File (code coverage only, filtered view): 100.00%</span><br></pre></td></tr></table></figure>
+<h4 id="电路图"><a href="#电路图" class="headerlink" title="电路图"></a>电路图</h4><p><img src="/2020/10/16/VLSI-Lab1/image-20201016163229390.png" alt="image-20201016163229390"></p>
+<h4 id="电路面积"><a href="#电路面积" class="headerlink" title="电路面积"></a>电路面积</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Number of ports:                            7</span><br><span class="line">Number of nets:                            10</span><br><span class="line">Number of cells:                            7</span><br><span class="line">Number of combinational cells:              7</span><br><span class="line">Number of sequential cells:                 0</span><br><span class="line">Number of macros/black boxes:               0</span><br><span class="line">Number of buf/inv:                          3</span><br><span class="line">Number of references:                       2</span><br><span class="line"> </span><br><span class="line">Combinational area:                 73.180801</span><br><span class="line">Buf/Inv area:                       19.958400</span><br><span class="line">Noncombinational area:               0.000000</span><br><span class="line">Macro/Black Box area:                0.000000</span><br><span class="line">Net Interconnect area:      undefined  (No wire load specified)</span><br><span class="line"> </span><br><span class="line">Total cell area:                    73.180801</span><br><span class="line">Total area:                 undefined</span><br></pre></td></tr></table></figure>
+<p>共$73.18um^2$</p>
+<h4 id="电路时延"><a href="#电路时延" class="headerlink" title="电路时延"></a>电路时延</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Operating Conditions: typical   Library: typical</span><br><span class="line">Wire Load Model Mode: top</span><br><span class="line"> </span><br><span class="line">  Startpoint: Cs (input port)</span><br><span class="line">  Endpoint: Y0 (output port)</span><br><span class="line">  Path Group: (none)</span><br><span class="line">  Path Type: max</span><br><span class="line"> </span><br><span class="line">  Point                                    Incr       Path</span><br><span class="line">  -----------------------------------------------------------</span><br><span class="line">  input external delay                     0.00       0.00 f</span><br><span class="line">  Cs (in)                                  0.00       0.00 f</span><br><span class="line">  U20/Y (INVX1)                            0.10       0.10 r</span><br><span class="line">  U18/Y (NAND3X1)                          0.04       0.14 f</span><br><span class="line">  Y0 (out)                                 0.00       0.14 f</span><br><span class="line">  data arrival time                                   0.14</span><br><span class="line">  -----------------------------------------------------------</span><br><span class="line">  (Path is unconstrained)</span><br></pre></td></tr></table></figure>
+<p>共$0.14fs$</p>
+<h4 id="电路功耗"><a href="#电路功耗" class="headerlink" title="电路功耗"></a>电路功耗</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Operating Conditions: typical   Library: typical</span><br><span class="line">Wire Load Model Mode: top</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">Global Operating Voltage = 1.8  </span><br><span class="line">Power-specific unit information :</span><br><span class="line">    Voltage Units = 1V</span><br><span class="line">    Capacitance Units = 1.000000pf</span><br><span class="line">    Time Units = 1ns</span><br><span class="line">    Dynamic Power Units = 1mW    (derived from V,C,T units)</span><br><span class="line">    Leakage Power Units = 1pW</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  Cell Internal Power  =   5.3268 uW   (45%)</span><br><span class="line">  Net Switching Power  =   6.3914 uW   (55%)</span><br><span class="line">                         ---------</span><br><span class="line">Total Dynamic Power    =  11.7182 uW  (100%)</span><br><span class="line"> </span><br><span class="line">Cell Leakage Power     = 263.0169 pW</span><br><span class="line"> </span><br><span class="line">Information: report_power power group summary does not include estimated clock tree power. (PWR-789)</span><br><span class="line"> </span><br><span class="line">                 Internal         Switching           Leakage            Total</span><br><span class="line">Power Group      Power            Power               Power              Power   (   %    )  Attrs</span><br><span class="line">--------------------------------------------------------------------------------------------------</span><br><span class="line">io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)</span><br><span class="line">memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)</span><br><span class="line">black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)</span><br><span class="line">clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)</span><br><span class="line">register           0.0000            0.0000            0.0000            0.0000  (   0.00%)</span><br><span class="line">sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)</span><br><span class="line">combinational  5.3268e-03        6.3914e-03          263.0169        1.1718e-02  ( 100.00%)</span><br><span class="line">--------------------------------------------------------------------------------------------------</span><br><span class="line">Total          5.3268e-03 mW     6.3914e-03 mW       263.0169 pW     1.1718e-02 mW</span><br></pre></td></tr></table></figure>
+<p>共$11.718mw$</p>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/10/15/chiplet/" rel="next" title="chiplet">
+                <i class="fa fa-chevron-left"></i> chiplet
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/10/16/2020week40/" rel="prev" title="2020week40">
+                2020week40 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt>
+  
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description motion-element" itemprop="description">冯老师最最最最最最爱小宁宁</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:supereaosn@sjtu.edu.cn" title="E-Mail &rarr; mailto:supereaosn@sjtu.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VLSI实验报告"><span class="nav-number">1.</span> <span class="nav-text">VLSI实验报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验1：硬件描述语言设计数字电路"><span class="nav-number">1.1.</span> <span class="nav-text">实验1：硬件描述语言设计数字电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三输入与非门"><span class="nav-number">1.1.1.</span> <span class="nav-text">三输入与非门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4译码器"><span class="nav-number">1.1.2.</span> <span class="nav-text">2-4译码器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Verilog代码"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Verilog代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Testbench"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">Testbench</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Wave"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">Wave</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Coverage-Report"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">Coverage Report</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电路图"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">电路图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电路面积"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">电路面积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电路时延"><span class="nav-number">1.1.2.7.</span> <span class="nav-text">电路时延</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电路功耗"><span class="nav-number">1.1.2.8.</span> <span class="nav-text">电路功耗</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '520px'
+        });
+      });
+    },
+  });
+}
+</script>
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+  
+
+</body>
+</html>

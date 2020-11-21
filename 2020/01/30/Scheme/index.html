@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <meta name="description" content="项目规划State of ArtMaharbiz Group利用超声波反向散射来监测深脑的神经信号  Size:  &amp;lt; $0.8mm^3$     Speed:  $7kS/s$     Depth:  $50mm$ STARDUST利用压电换能器和超声波供能驱动光学器件以刺激神经元  Size：&amp;lt; $0.2mm^3$    Power:  $2.454mW$ 概述​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scheme">
+<meta property="og:url" content="http://yoursite.com/2020/01/30/Scheme/index.html">
+<meta property="og:site_name" content="Eason的主页">
+<meta property="og:description" content="项目规划State of ArtMaharbiz Group利用超声波反向散射来监测深脑的神经信号  Size:  &amp;lt; $0.8mm^3$     Speed:  $7kS/s$     Depth:  $50mm$ STARDUST利用压电换能器和超声波供能驱动光学器件以刺激神经元  Size：&amp;lt; $0.2mm^3$    Power:  $2.454mW$ 概述​">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2020/01/30/Scheme/image-20200130165436989.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/30/Scheme/image-20200130170219601.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/30/Scheme/image-20200130132235873.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/30/Scheme/image-20200130132257950.png">
+<meta property="og:updated_time" content="2020-01-30T10:48:25.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scheme">
+<meta name="twitter:description" content="项目规划State of ArtMaharbiz Group利用超声波反向散射来监测深脑的神经信号  Size:  &amp;lt; $0.8mm^3$     Speed:  $7kS/s$     Depth:  $50mm$ STARDUST利用压电换能器和超声波供能驱动光学器件以刺激神经元  Size：&amp;lt; $0.2mm^3$    Power:  $2.454mW$ 概述​">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/30/Scheme/image-20200130165436989.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/01/30/Scheme/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>Scheme | Eason的主页</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Eason的主页</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/Scheme/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content="冯老师最最最最最最爱小宁宁">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eason的主页">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Scheme
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-30 11:12:12 / 修改时间：18:48:25" itemprop="dateCreated datePublished" datetime="2020-01-30T11:12:12+08:00">2020-01-30</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h1 id="项目规划"><a href="#项目规划" class="headerlink" title="项目规划"></a>项目规划</h1><h2 id="State-of-Art"><a href="#State-of-Art" class="headerlink" title="State of Art"></a>State of Art</h2><h3 id="Maharbiz-Group"><a href="#Maharbiz-Group" class="headerlink" title="Maharbiz Group"></a>Maharbiz Group</h3><p><strong>利用超声波反向散射来监测深脑的神经信号</strong></p>
+<p><img src="/2020/01/30/Scheme/image-20200130165436989.png" alt="image-20200130165436989" style="zoom: 33%;"> <strong>Size:  &lt; $0.8mm^3$     Speed:  $7kS/s$     Depth:  $50mm$</strong></p>
+<h3 id="STARDUST"><a href="#STARDUST" class="headerlink" title="STARDUST"></a>STARDUST</h3><p><strong>利用压电换能器和超声波供能驱动光学器件以刺激神经元</strong></p>
+<p><img src="/2020/01/30/Scheme/image-20200130170219601.png" alt="image-20200130170219601" style="zoom:50%;"> <strong>Size：&lt; $0.2mm^3$    Power:  $2.454mW$</strong></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>​        <strong>系统硬件部分总共可以分成体内和体外两部分，其中体内部分又可以分成神经接口、模拟电路、压电换能器两部分，根据前人研究的经验，项目应该分阶段循序渐进发展，前面先模仿，在有雏形后再加新的东西</strong>：</p>
+<ul>
+<li>第一阶段：搭建一个PCB级的电路，模拟电路用元件拼接，压电材料用现成材料拼接到版上，这个阶段主要用于验证系统和熟悉开发和测试方法。</li>
+<li>第二阶段：基本功能验证成功后，电路使用CMOS工艺制作ASIC芯片，并可以往芯片上添加更更多模块（如LNA，整流电路，储能电路）。</li>
+<li>第三阶段：在实验室验证完之后，应当在活体生物上展开实验</li>
+<li>接下来便是对三种模块的不同方向的优化：<ul>
+<li>压电换能器方向：小型化，CMOS工艺兼容</li>
+<li>ASIC方向：更多模块，更复杂的电路，以实现更高能效，更高信噪比</li>
+<li>神经接口方向：更高分辨率，能长效监测的的神经接口</li>
+</ul>
+</li>
+<li>再往后便是系统在生物体内，甚至脑内的具体使用问题</li>
+</ul>
+<h2 id="第一版（5-6周）"><a href="#第一版（5-6周）" class="headerlink" title="第一版（5~6周）"></a>第一版（5~6周）</h2><p><strong>PCB级电路，用于压电材料测试和系统验证，并熟悉测试方法</strong></p>
+<p><img src="/2020/01/30/Scheme/image-20200130132235873.png" alt="image-20200130132235873" style="zoom:50%;"> <img src="/2020/01/30/Scheme/image-20200130132257950.png" alt="image-20200130132257950" style="zoom: 50%;"></p>
+<ul>
+<li>PVDF薄膜已经买好（总共有28,52,110微米三种厚度），向赵云飞以及厂商请教如何裁剪装配</li>
+<li>三种FET：<ul>
+<li>长沟道，$V_{th}=500mV$</li>
+<li>短沟道，$V_{th}=500mV$</li>
+<li>Native FET，$V_{th}=0mV$</li>
+</ul>
+</li>
+</ul>
+<h3 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h3><ul>
+<li>电路设计与PCB设计（需要帮助）——预计1周</li>
+<li>PZT材料加工，PCB生产装配——预计2~3周</li>
+<li>调试，去罗建文老师处测试并采集反射的超声信号，解调出所需信号——预计2周</li>
+</ul>
+<h2 id="第二版"><a href="#第二版" class="headerlink" title="第二版"></a>第二版</h2><p><strong>ASIC+PCB，把第一版验证的系统小型化（&lt;5mm）</strong></p>
+<ul>
+<li>把第一版的电路设计成ASIC，适当添加更多模块（如LNA，整流电路，储能电路），用CMOS工艺加工</li>
+<li>使用更小的PCB版，更小的压电材料和电极</li>
+<li>先在罗建文老师处利用信号发生器测试成功，再联系段老师在生物体上测试</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/14/review6082/" rel="next" title="Review6082">
+                <i class="fa fa-chevron-left"></i> Review6082
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/07/2020week06/" rel="prev" title="2020week06">
+                2020week06 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/photo.jpg" alt>
+  
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description motion-element" itemprop="description">冯老师最最最最最最爱小宁宁</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:supereaosn@sjtu.edu.cn" title="E-Mail &rarr; mailto:supereaosn@sjtu.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目规划"><span class="nav-number">1.</span> <span class="nav-text">项目规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#State-of-Art"><span class="nav-number">1.1.</span> <span class="nav-text">State of Art</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Maharbiz-Group"><span class="nav-number">1.1.1.</span> <span class="nav-text">Maharbiz Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STARDUST"><span class="nav-number">1.1.2.</span> <span class="nav-text">STARDUST</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.2.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一版（5-6周）"><span class="nav-number">1.3.</span> <span class="nav-text">第一版（5~6周）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间线"><span class="nav-number">1.3.1.</span> <span class="nav-text">时间线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二版"><span class="nav-number">1.4.</span> <span class="nav-text">第二版</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '520px'
+        });
+      });
+    },
+  });
+}
+</script>
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+
+
+
+  
+
+</body>
+</html>
