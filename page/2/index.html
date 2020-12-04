@@ -313,6 +313,10 @@
       
     
       
+    
+      
+    
+      
           
 
   
@@ -689,190 +693,6 @@
     
       
     
-      
-    
-      
-          
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/pim/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content="冯老师最最最最最最爱小宁宁">
-      <meta itemprop="image" content="/images/photo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Eason的主页">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/07/22/pim/" class="post-title-link" itemprop="url">pim</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-07-22 17:09:12" itemprop="dateCreated datePublished" datetime="2020-07-22T17:09:12+08:00">2020-07-22</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-07-23 21:33:42" itemprop="dateModified" datetime="2020-07-23T21:33:42+08:00">2020-07-23</time>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<h2 id="Process-in-memory-方向"><a href="#Process-in-memory-方向" class="headerlink" title="Process in memory 方向"></a>Process in memory 方向</h2><h3 id="系统结构"><a href="#系统结构" class="headerlink" title="系统结构"></a>系统结构</h3><ul>
-<li>神经元接口（前端电路）→ ADC → PIM → 控制逻辑（控制刺激或者通信）→通信电路（刺激电路）</li>
-<li>供能模块</li>
-</ul>
-<h3 id="约束条件"><a href="#约束条件" class="headerlink" title="约束条件"></a>约束条件</h3><ul>
-<li>面积：芯片面积越大，接收到的能量越多，同时可以容纳更多的RAM单元，也可以拥有更强的算力，初步想法是芯片的面积约$10mm^2$，至少能实现多通道神经元信号分离、简单模式识别。</li>
-<li>能量：能量约束取决于能量供给模块，同时应该采用高能效比的体系架构，在植入性设备上，能效比 &gt; 性能</li>
-</ul>
-<h3 id="确定怎样的应用可以使用PIM"><a href="#确定怎样的应用可以使用PIM" class="headerlink" title="确定怎样的应用可以使用PIM"></a>确定怎样的应用可以使用PIM</h3><ul>
-<li>神经信号的模式识别</li>
-<li>神经信号处理算法</li>
-</ul>
-<h3 id="有待进一步调研的问题"><a href="#有待进一步调研的问题" class="headerlink" title="有待进一步调研的问题"></a>有待进一步调研的问题</h3><ul>
-<li>在植入式神经芯片的应用中，最大的能量消耗是哪一个部分，根据经验ADC会消耗大量能量，而模式识别或者数据处理算法所消耗的能量占多大比例（至少要超过30%才有使用PIM的意义）</li>
-<li>与传统架构相比，使用PIM所额外增加的控制电路面积与功耗（植入性应用中RAM单元较少，所以相应控制电路占比会更大）</li>
-<li><p>PIM在植入式芯片上是否有优势，一般来说PIM会在 memory-intensive的应用上具有优势，比如当数据在内存和处理器之间大量搬运时（NN运算），在功耗和电路面积极其受限的情况下，PIM是否有用</p>
-</li>
-<li><p>神经信号的处理算法、神经信号模式识别算法、神经疾病诊断</p>
-</li>
-</ul>
-<h3 id="和展宏聊天结果"><a href="#和展宏聊天结果" class="headerlink" title="和展宏聊天结果"></a>和展宏聊天结果</h3><ul>
-<li>PIM不是目的，而是降低功耗、提高能效比的手段之一</li>
-<li>植入式计算芯片的目的是在与可以直接本地计算，减少与体外系统的通信<ul>
-<li>计算电路与通信电路功耗比较</li>
-<li>算法适合何种器件、电路、体系结构</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-      
-    
   </section>
 
   
@@ -922,7 +742,7 @@
         
           <a href="/archives">
         
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">83</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
